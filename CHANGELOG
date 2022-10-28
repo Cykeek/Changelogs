@@ -28,3 +28,21 @@ Declare EUICC permission
 Enable IORap app launch prefetching [ improvements to app launch time ]
 Use 64bit dex2oat on all cores
 Add regulatory info label [ Depends on source side for this option ]
+
+*** Kernel Changes ***
+better Deepsleep now upto 98%
+enable adrenoboost by default [ Set it to low powered mode to eliminate ui lags without having a high active drain ]
+changes in strings [ added CYKEEK-BALANCED_KERNEL ]
+Fix some logspam
+Imposed some restrictions during CPU idle [ Reduces IDLE drain ]
+Kill GoogleCamera in background [ Don't worry LMC Cam is safe ]
+added support for LLVM's Polly optimizer
+Minimize wakeup time
+Disabled LTO
+avoid dynamic allocations in sel_write-access [ better performance ] 
+Reduce freeze timeout to 1 sec for Android
+Disable RT_RUNTIME_SHARE by default [ better CPU usage ]
+introduce simple low memory killer for Android [ better Ram usage ]
+Disabled debug logging in other areas [ causing high cpu usage ]
+disable EVENT_LOG in usb thanks to Mr.fox unkil :)
+
