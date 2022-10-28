@@ -1,0 +1,30 @@
+=== October Changes ===
+
+Add LMC8.4 gcam instead of GcamGo [better feature and better quality]
+Enabled qcrild & data services on boot
+Added Pixel 7 pro CTS Fingerprint [ google/cheetah/cheetah:13/TD1A.220804.031/9071314:user/release-keys ]
+Reverted headphone volume [ Causing distortion in heaphone ]
+Added optional Pixel Launcher MOD [ Depend on maintainer whther they want to add Pixel Mod version or not ]
+Allow SystemUI app to READ_PHONE_STATE
+set 50% Zram size
+Enable 64-bit inode version support for ext4
+Set max_comp_streams to 4 [ more results in battery drain and lags ]
+Kang sensors.ssc from Nokia PL2 [ * Fixes deep sleep , knaged from PL2_sprout-user 10 QKQ1.190828.002 00WW_4_150 ]
+Addres dolby denials
+Optimized auto brightness adjustment
+Tweak msm_irqbalance [ We should ignore latency sensitive IRQs from userspace IRQ balancing ]
+Tune bmps listening interval [ Tune the BMPS listening interval for the moderate power level to achieve power savings during wifi idle ]
+use clang-r437112b
+Import extras for Realme 3 Pro [ * it includes : - MotoPhone - MotoGallery - MotoWidget - LMC Gcam]
+Set default wifi country code and allow resetting
+Wi-Fi improvements
+Set Wifi country code to US [ enables 5GHz wifi hotspot ]
+import Powerhint.json from Android13-release [ From Redbull Devices (Pixel 5) ]
+Update Performance data for Android T [ updated values from redbull devices (Pixel 5) ]
+Add tethering usb props
+Set permissions for KGSL sysfs node
+Add feature flag for FEATURE_IPSEC_TUNNELS [ it adds the IPSEC_TUNNELS feature flag, with XFRM Interfaces used as the implementation of choice ]
+Declare EUICC permission
+Enable IORap app launch prefetching [ improvements to app launch time ]
+Use 64bit dex2oat on all cores
+Add regulatory info label [ Depends on source side for this option ]
