@@ -1,78 +1,28 @@
-=== October Changes ===
-
-Enabled qcrild & data services on boot
-Added Pixel 7 pro CTS Fingerprint [ google/cheetah/cheetah:13/TD1A.220804.031/9071314:user/release-keys ]
-Reverted headphone volume [ Causing distortion in heaphone ]
-Added optional Pixel Launcher MOD [ Depend on maintainer whther they want to add Pixel Mod version or not ]
-Allow SystemUI app to READ_PHONE_STATE
-set 50% Zram size
-Enable 64-bit inode version support for ext4
-Set max_comp_streams to 4 [ more results in battery drain and lags ]
-Kang sensors.ssc from Nokia PL2 [ * Fixes deep sleep , knaged from PL2_sprout-user 10 QKQ1.190828.002 00WW_4_150 ]
-Addres dolby denials
-Optimized auto brightness adjustment
-Tweak msm_irqbalance [ We should ignore latency sensitive IRQs from userspace IRQ balancing ]
-Tune bmps listening interval [ Tune the BMPS listening interval for the moderate power level to achieve power savings during wifi idle ]
-use clang-r437112b
-Import extras for Realme 3 Pro [ * it includes : - MotoPhone - MotoGallery - MotoWidget - LMC Gcam]
-Set default wifi country code and allow resetting
-Wi-Fi improvements
-Set Wifi country code to US [ enables 5GHz wifi hotspot ]
-import Powerhint.json from Android13-release [ From Redbull Devices (Pixel 5) ]
-Update Performance data for Android T [ updated values from redbull devices (Pixel 5) ]
-Add tethering usb props
-Set permissions for KGSL sysfs node
-Add feature flag for FEATURE_IPSEC_TUNNELS [ it adds the IPSEC_TUNNELS feature flag, with XFRM Interfaces used as the implementation of choice ]
-Declare EUICC permission
-Enable IORap app launch prefetching [ improvements to app launch time ]
-Use 64bit dex2oat on all cores
-Add regulatory info label [ Depends on source side for this option ]
-Removed More Gapps Bloatware and bring back GoogleChrome [think install windows and there is no browser how weird it gonna look
-so why not repect android in the same way?]
-Disable Intrusive gms components [these processes were not allowed to run in background and yet they still persist everytime causing logspam and unnecessary broadcast]
-Added aptX support
-bring back GCamGo as default and kicked LMC [ user can download it i hate bloatwares!!]
+=== November Changes ===
+Removed GCamGo [ Lineage OS based aperture is now default ]
+use QCOM implementation for audio
+import Powerhint.json from redbull devices
+tweak powerhint.json for better performance [gayming +++]
+Disable UFS Boost during initial boot
+Added system app whitelist for applock
+Now magisk can hide better [ Haven't tested yet !!]
+Show 4G icon for all carriers [ Who uses 3G in this era? ]
+Fix ScreenRecord Lags
+Shorten wait for services exit to optimize shutdown
+Drop depreceated media codecs
+removed unnecessary QTI logkits
+improved haptics and vibe patterns [ before it was dead now it feels like premium device haptics ]
+stop bootanimation service after devices device got booted
+address some libperfmgr errors
 
 *** Kernel Changes ***
-better Deepsleep now upto 98%
-enable adrenoboost by default [ Set it to low powered mode to eliminate ui lags without having a high active drain ]
-changes in strings [ added CYKEEK-BALANCED_KERNEL ]
-Fix some logspam
-Imposed some restrictions during CPU idle [ Reduces IDLE drain ]
-Kill GoogleCamera in background [ Don't worry LMC Cam is safe ]
-added support for LLVM's Polly optimizer
-Minimize wakeup time
-Disabled LTO
-avoid dynamic allocations in sel_write-access [ better performance ] 
-Reduce freeze timeout to 1 sec for Android
-Disable RT_RUNTIME_SHARE by default [ better CPU usage ]
-introduce simple low memory killer for Android [ better Ram usage ]
-Disabled debug logging in other areas [ causing high cpu usage ]
-disable EVENT_LOG in usb thanks to Mr.fox unkil :)
-Added KCAL support
-increase GPU and cgroup limit to 6 [more performance brrrrrrrrr!! fuck idle drain who cares]
-use CLKFLAG_NO_RATE_CACHE [Better CPU management and deep sleep might be better]
-Disabled I/O stats accounting by default
-Disable random pool contribution by default
-swap pages one at a time
-Relax adreno spin idle tight loop [ causing RT throttling ]
-Diable compaction of unevictable pages [Lets prevent these applications from having their memory moved during compaction]
-Add cap_user_time aarch64 [ Better calculation in thread times which leads to low CPU usage ]
-Avoid competing with low-priority tasks
-move msm_ion_init to async probe [ Reduce Boot time to first stage ]
-Use optimized memcmp [ Improves performance ]
-update LZ4 compressor module [ Patch series "Update LZ4 compressor module", v7. ]
-More log spam compressed 
-Don't allow IRQ affinity masks to have more than one CPU [ Fix the IRQ affinity mask deception by forcing it to only contain one
-set CPU ]
-Fix mem leak reported by kmemleak 
-Silence healthd messages from userspace [ Constant messages about battery status every second doesn't help battery or debugging]
-enable support for TCP fast open on listeners 
-Disable IRQ debugging by default 
-disable tx and rx debugging 
-Queue work on power efficient WQ
-Silences WLAN, PCIe, and CPU suspend state kernel messages
-Welcome Liquid [ by kartik728 ]
-memory utilities optimization [ Optimize memcpy and memmove ]
-Add more improvements in KCAL [ now FKM detect KCAL properly ]
-
+better Deepsleep now upto 99%
+upstreamed upto 4.9.309 thanks to @kanstmablason for helping me
+Added sound control
+Added vibration control
+Added wakelocks Drivers from IllusionX
+Tuned adrenoboost stuffs
+introduced kernel space battery saver
+Added anxiety I/O scheduler
+Upgrade Ricy V1.0+ to V1.1+
+many more I forgot
