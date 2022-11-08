@@ -14,6 +14,34 @@ removed unnecessary QTI logkits
 improved haptics and vibe patterns [ before it was dead now it feels like premium device haptics ]
 stop bootanimation service after devices device got booted
 address some libperfmgr errors
+Decrease launch boost to 3sec
+Set 1 second timeout for interaction boosts
+Enable haptic text cursor
+Don't write binary XML files [Android 12 now writes XML files in binary format by default. This can cause incompatibility with TWRP which can hang when attempting to read XML files]
+Remove RenderScript implementation [ No Need ]
+ncrease Keyboard vibration strength
+Fix disabling A2DP offload
+don't latch unsignal buffers
+et renderengine backend to threaded [ Fixes laggy bootanimation ]
+Enable QR scanner shortcut in lock screen
+mport common QSSI properties
+Add a system property for System UI compiler filter
+nable zygote critical window
+Disable Adaptive Connectivity preference
+Switch to AVC 3.1 for screen recording [ AVC 3.1 seems to pull less load on the CPU/GPU and therefore using it has performance advantages in screen recording]
+Migrate I/O scheduler parameters to task_profiles.json
+Hide user facing crash dialog for EUICC app
+Squashed import of AiAi configs
+Enable call recording [ only for aosp dialers ]
+Add missing android.hardware.media.omx
+Add 3.0 and 4.0 IMapper instance to manifest
+Speed profile services and wifi-service to reduce RAM and storage
+Add tethering usb props
+dd shim for missing symbol in lib-imsvt.so
+Set block_binder_thread_on_incoming_calls in product.prop
+Removed WiFi Aware support [Doesn't work for our device ]
+Fix qti_power_hal
+Fix livedisplay hals manifest
 
 *** Kernel Changes ***
 better Deepsleep now upto 99%
